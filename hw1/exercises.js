@@ -67,7 +67,7 @@
 
   var cashRegister = {
 
-    tota: undefined,
+    total: undefined,
 
     lastTransaction: undefined,
 
