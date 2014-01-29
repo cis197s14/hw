@@ -72,16 +72,7 @@
     lastTransaction: undefined,
 
     /*
-     * Add some dollar amount to the current total.
-     *
-     * @param amt   (Number) dollar amount to add
-     */
-    add: function (amt) {
-
-    },
-
-    /*
-     * Update the register.
+     * Update the register based on the current item to be scanned.
      *
      * @param item      (String) name of the item to be scanned
      * @param quantity  (Number) how many of this item
@@ -125,8 +116,9 @@
    * The Towers of Hanoi problem is a classic puzzle in which you are presented
    * with three pegs. There is a stack of discs of increasing size on one peg.
    * Your job is to determine the series of disc moves (you can only move one
-   * disc * at a time) that will move the entire stack to another peg. See
-   * [this image](http://upload.wikimedia.org/wikipedia/commons/0/07/Tower_of_Hanoi.jpeg).
+   * disc at a time) that will move the entire stack to another peg. You are
+   * only allowed to move a disk onto another one that is of greater size.
+   * See * [this image](http://upload.wikimedia.org/wikipedia/commons/0/07/Tower_of_Hanoi.jpeg).
    *
    * Your solution should output tower moves as a string with newlines, in the
    * following form (if 'A', 'B', and 'C' were the peg names):
@@ -152,7 +144,11 @@
   };
 
 
-  // Export as module
+  /*
+   * NOTE: don't change this code.
+   *
+   * Export solution as a module.
+   */
   module.exports = {
     arrayMethods: arrayMethods,
     cashRegister: cashRegister,
