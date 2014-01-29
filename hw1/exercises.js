@@ -82,8 +82,8 @@
     },
 
     /*
-     * Undo the last transaction. This method may only work once; you don't need
-     * to keep a history of all transactions.
+     * Undo the last transaction. This method may only work once per
+     * transaction; you don't need to keep a history of all transactions.
      */
     voidLastTransaction: function () {
 
@@ -99,8 +99,8 @@
     },
 
     /*
-     * Prepare the register for a new transaction. Print out the total cost
-     * before resetting it.
+     * Prepare the register for a new transaction.
+     * Print out the total cost before resetting it.
      */
     completeTransaction: function () {
 
