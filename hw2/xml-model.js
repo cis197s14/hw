@@ -98,7 +98,10 @@
   // Testing methods
   // -------------------------------------------------------------------------
 
-  var SAMPLE_XML = '<xml>Hello, <who name="world">world</who>!</xml>'
+  // TODO
+  // You are encouraged to test on more complex XML samples; we certainly will
+  // when grading this assignment.
+  var SAMPLE_XML = '<xml>Hello, <who name="world">world</who>!</xml>';
 
   var testModel = function () {
     var builder = new XMLDocumentBuilder(SAMPLE_XML, function (doc) {
