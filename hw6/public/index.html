@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <title>Pokémon</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+
+    <!-- underscore templates -->
+
+    <script type="text/template" id="app-template">
+      <div id="controls">
+        <a href="#play" class="play">Play</a>
+        <a href="#reset" class="reset">Reset</a>
+        <ul class="maps-list">
+          <p>
+            <strong>Maps</strong>
+          </p>
+          <% _.each(maps, function (map) { %>
+            <a href="#build/<%= map %>">
+              <li><%= map %></li>
+            </a>
+          <% }); %>
+        </ul>
+        <input class="new-map" type="text" placeholder="New map..." />
+      </div>
+
+      <div id="map"> </div>
+    </script>
+
+    <script type="text/template" id="swatch-template">
+      <li class="swatch <%= name %>"></li>
+    </script>
+
+    <script type="text/template" id="canvas-template">
+      <% _.each(tiles, function (row) { %>
+        <div class="row">
+
+        <% _.each(row, function (tile) { %>
+          <div class="tile swatch <%= tile.swatch %>" data-row="<%= tile.row %>" data-col="<%= tile.col %>"></div>
+        <% }); %>
+
+        </div>
+      <% }); %>
+    </script>
+
+    <script type="text/template" id="builder-template">
+      <div class="canvas"></div>
+      <hr/>
+
+      <div class="palette">
+        <ul>
+        </ul>
+      </div>
+    </script>
+
+
+    <!-- pad 10 pixels because of <html> frame -->
+    <script type="text/template" id="player-template">
+      <div class="player facing-<%= orientation %>"
+        style="top: <%= top + 10 %>px; left: <%= left + 10 %>px"></div>
+    </script>
+
+
+
+    <!-- load scripts -->
+    <script src="lib/js/require.js" data-main="app/main.js"></script>
+
+  </body>
+</html>
+
