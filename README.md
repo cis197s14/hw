@@ -1,2 +1,4 @@
-CIS 197 Fall 2014 homework
-============================
+hw
+==
+
+Homework assignments.

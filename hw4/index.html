@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <title>Map Builder v2</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+
+    <div id="map-builder">
+      <div class="canvas"></div>
+      <hr/>
+
+      <div class="palette">
+        <ul>
+        </ul>
+      </div>
+    </div>
+
+    <!-- underscore templates -->
+
+    <script type="text/template" id="swatch-template">
+      <li class="swatch <%= name %>"></li>
+    </script>
+
+    <script type="text/template" id="canvas-template">
+      <% _.each(tiles, function (row) { %>
+        <div class="row">
+
+        <% _.each(row, function (tile) { %>
+          <div class="tile swatch <%= tile.swatch %>" data-row="<%= tile.row %>" data-col="<%= tile.col %>"></div>
+        <% }); %>
+
+        </div>
+      <% }); %>
+    </script>
+
+    <script type="text/template" id="player-template">
+      <div class="player facing-<%= orientation %>"
+        style="top: <%= top %>px; left: <%= left %>px"></div>
+    </script>
+
+    <!-- load scripts -->
+
+    <script src="lib/js/jquery-1.11.0.js"></script>
+    <script src="lib/js/mousetrap.min.js"></script>
+    <script src="lib/js/underscore.js"></script>
+    <script src="lib/js/backbone.js"></script>
+    <script src="map-builder.js"></script>
+  </body>
+</html>
+
