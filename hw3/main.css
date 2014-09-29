@@ -124,8 +124,8 @@ hr {
     cursor: pointer;
   }
 
-  .palette .swatch:hover    { border-color: #aca; }
-  .palette .swatch.selected { border-color: #686; }
+  .palette .swatch:hover    { border-color: #aca; opacity: 0.8; }
+  .palette .swatch.selected { border-color: #0074D9; }
 
 .map {
   width: 100%;
